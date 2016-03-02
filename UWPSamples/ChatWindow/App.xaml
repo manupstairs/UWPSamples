@@ -4,5 +4,64 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ChatWindow"
     RequestedTheme="Light">
+    <Application.Resources>
+        <DataTemplate x:Key="MessageDataTemplate">
+            <Grid HorizontalAlignment="Left"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" CornerRadius="4" Background="LightGray" Padding="15">
+                    <TextBlock Text="{Binding Comment}"></TextBlock>
+                </Grid>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name}" Foreground="LightGray"></TextBlock>
+                    <TextBlock Text="{Binding Published}"  Foreground="LightGray" Margin="10,0,0,0"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="SelfMessageDataTemplate">
+            <Grid HorizontalAlignment="Right"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" CornerRadius="4" Background="Green" Padding="15">
+                    <TextBlock Text="{Binding Comment}" Foreground="White"></TextBlock>
+                </Grid>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="{Binding Published}"  Foreground="LightGray" Margin="0,0,10,0"></TextBlock>
+                    <TextBlock Text="{Binding Name}" Foreground="LightGray"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="GiftDataTemplate">
+            <Grid HorizontalAlignment="Left"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" CornerRadius="4" Background="Orange"  Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Ellipse Grid.Row="0" Width="50" Height="50" Fill="Red" Stroke="Gold" StrokeThickness="4"></Ellipse>
+                    <TextBlock Grid.Row="0" Text="红包" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Row="1" Text="{Binding Amount}" TextAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Row="2" Text="{Binding Comment}" TextAlignment="Center" ></TextBlock>
+                </Grid>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name}" Foreground="LightGray"></TextBlock>
+                    <TextBlock Text="{Binding Published}"  Foreground="LightGray" Margin="10,0,0,0"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+        <local:MessageItemDataTemplateSelector x:Key="MessageItemDataTemplateSelector"></local:MessageItemDataTemplateSelector>
+    </Application.Resources>
 
 </Application>

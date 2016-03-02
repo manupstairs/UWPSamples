@@ -7,7 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>
+    <ListView Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+              ItemTemplateSelector="{StaticResource MessageItemDataTemplateSelector}"
+              ItemsSource="{Binding MessageList}">
+        <ListView.ItemContainerStyle>
+            <Style TargetType="ListViewItem">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                <Setter Property="Margin" Value="10"></Setter>
+            </Style>
+        </ListView.ItemContainerStyle>
+    </ListView>
 </Page>

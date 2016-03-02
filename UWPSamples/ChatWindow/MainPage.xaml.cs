@@ -25,6 +25,7 @@ namespace ChatWindow
         public MainPage()
         {
             this.InitializeComponent();
+            this.DataContext = new ChatWindowViewModel();
         }
     }
 }
