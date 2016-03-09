@@ -1,0 +1,102 @@
+﻿<Page
+    x:Class="AdaptiveLayout.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AdaptiveLayout"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="GridRootLayout" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="12">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState >
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="769" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="GridRootLayout.HorizontalAlignment" Value="Left"></Setter>
+                        <Setter Target="GridRootLayout.VerticalAlignment" Value="Top"></Setter>
+                        <Setter Target="GridRootLayout.Width" Value="320"></Setter>
+                        <Setter Target="GridRootLayout.Height" Value="640"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="2.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <FontIcon Grid.Column="0" Glyph="&#xE00E;" />
+            <TextBlock Grid.Column="1" Style="{StaticResource SubtitleTextBlockStyle}" HorizontalAlignment="Left">个人名片</TextBlock>
+            <TextBlock Grid.Column="2" Style="{StaticResource CaptionTextBlockStyle}" VerticalAlignment="Center" >编辑</TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Ellipse Grid.Row="1" Width="60" Height="60"  >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Assets/xingzheng.jpg" ></ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" VerticalAlignment="Center">邢政</TextBlock>
+                <FontIcon Glyph="&#xE1D1;"></FontIcon>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}" Foreground="LightGray">易信号:</TextBlock>
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}"  Foreground="LightGray">manupstairs</TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center">星级</TextBlock>
+            <FontIcon Grid.Column="1" Glyph="&#xE1CF;" HorizontalAlignment="Left" />
+        </Grid>
+        <Grid Grid.Row="3" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center">二维码</TextBlock>
+            <FontIcon Grid.Column="1"  Glyph="&#xE14E;" HorizontalAlignment="Left"></FontIcon>
+        </Grid>
+        <Grid Grid.Row="4" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center">地区</TextBlock>
+            <TextBlock Grid.Column="1" VerticalAlignment="Center">上海</TextBlock>
+        </Grid>
+        <Grid Grid.Row="5" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center">朋友圈</TextBlock>
+            <Image Grid.Column="1" Source="Assets/Square44x44Logo.png" HorizontalAlignment="Left" ></Image>
+        </Grid>
+    </Grid>
+</Page>
