@@ -29,7 +29,6 @@ namespace ListViewExSample
         {
             this.InitializeComponent();
             InitData();
-            this.listViewEx.LoadHistoryEvent += ListViewEx_LoadHistoryEvent;
         }
 
         private void ListViewEx_LoadHistoryEvent(object sender, EventArgs e)
@@ -49,6 +48,16 @@ namespace ListViewExSample
         {
             Items = new ObservableCollection<int>();
             Insert5Item(20);
+        }
+
+        private void Grid_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.listViewEx.ScrollIntoView(Items.LastOrDefault());
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.listViewEx.ScrollIntoView(Items.LastOrDefault());
         }
     }
 }
