@@ -10,6 +10,6 @@
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Text="{Binding SelectedPerson.Name}"></TextBlock>
         <TextBlock Text="{Binding SelectedPerson.Age}"></TextBlock>
-        <Button Click="Button_Click">GoBack</Button>
+        <Button x:Name="ButtonGoBack" Click="Button_Click">GoBack</Button>
     </StackPanel>
 </Page>

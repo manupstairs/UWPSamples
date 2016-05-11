@@ -39,5 +39,11 @@ namespace CheckMemoryLeak
             var viewModel = this.DataContext as INavigable;
             viewModel.OnNavigatedTo(e.Parameter);
         }
+
+        protected override void OnNavigatedFrom(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            this.ButtonGoBack.Click -= Button_Click;
+        }
     }
 }

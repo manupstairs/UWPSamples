@@ -34,5 +34,13 @@ namespace CheckMemoryLeak
         {
             this.Frame.Navigate(Type.GetType(e.PageName), e.Parameter);
         }
+
+        //protected override void OnNavigatedFrom(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
+        //{
+        //    base.OnNavigatedFrom(e);
+        //    var viewModel = this.DataContext as INavigable;
+        //    viewModel.OnNavigatedFrom(e.Parameter);
+        //}
+        
     }
 }

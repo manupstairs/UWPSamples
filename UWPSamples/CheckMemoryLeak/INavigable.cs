@@ -10,6 +10,7 @@ namespace CheckMemoryLeak
     {
         event EventHandler<NavigationEventArgs> NavigateEvent;
 
+        event EventHandler GoBackEvent;
 
         void OnNavigatedTo(object obj);
 

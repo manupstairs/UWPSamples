@@ -11,8 +11,20 @@ namespace CheckMemoryLeak
     public class MainViewModel : INotifyPropertyChanged, INavigable
     {
         private PersonViewModel _selectedPerson;
+        private List<PersonViewModel> _personList;//{ get; set; }
 
-        public List<PersonViewModel> PersonList { get; set; }
+        public List<PersonViewModel> PersonList
+        {
+            get
+            {
+                return _personList;
+            }
+            set
+            {
+                _personList = value;
+                OnPropertyChanged();
+            }
+        }
 
         public PersonViewModel SelectedPerson
         {
@@ -24,12 +36,17 @@ namespace CheckMemoryLeak
             {
                 _selectedPerson = value;
                 OnPropertyChanged();
-                NavigateEvent(this, new NavigationEventArgs { PageName = "CheckMemoryLeak.SecondPage", Parameter = _selectedPerson });
+                NavigateEvent(this, new NavigationEventArgs
+                {
+                    PageName = "CheckMemoryLeak.SecondPage",
+                    Parameter = new PersonViewModel { Name = _selectedPerson.Name, Age = _selectedPerson.Age }
+                });
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler<NavigationEventArgs> NavigateEvent;
+        public event EventHandler GoBackEvent;
 
         public MainViewModel()
         {
@@ -53,6 +70,7 @@ namespace CheckMemoryLeak
 
         public void OnNavigatedFrom(object obj)
         {
+            
         }
     }
 }

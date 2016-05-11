@@ -25,6 +25,7 @@ namespace CheckMemoryLeak
             }
         }
 
+        public event EventHandler GoBackEvent;
         public event EventHandler<NavigationEventArgs> NavigateEvent;
         public event PropertyChangedEventHandler PropertyChanged;
 
