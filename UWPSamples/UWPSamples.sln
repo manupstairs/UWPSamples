@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveVisualTreeTest", "LiveV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckMemoryLeak", "CheckMemoryLeak\CheckMemoryLeak.csproj", "{91E76A2C-3B45-47FB-9AFD-217888C8F4B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventMemoryLeak", "EventMemoryLeak\EventMemoryLeak.csproj", "{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -133,6 +135,24 @@ Global
 		{91E76A2C-3B45-47FB-9AFD-217888C8F4B1}.Release|x86.ActiveCfg = Release|x86
 		{91E76A2C-3B45-47FB-9AFD-217888C8F4B1}.Release|x86.Build.0 = Release|x86
 		{91E76A2C-3B45-47FB-9AFD-217888C8F4B1}.Release|x86.Deploy.0 = Release|x86
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Debug|ARM.ActiveCfg = Debug|ARM
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Debug|ARM.Build.0 = Debug|ARM
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Debug|ARM.Deploy.0 = Debug|ARM
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Debug|x64.ActiveCfg = Debug|x64
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Debug|x64.Build.0 = Debug|x64
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Debug|x64.Deploy.0 = Debug|x64
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Debug|x86.ActiveCfg = Debug|x86
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Debug|x86.Build.0 = Debug|x86
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Debug|x86.Deploy.0 = Debug|x86
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Release|ARM.ActiveCfg = Release|ARM
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Release|ARM.Build.0 = Release|ARM
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Release|ARM.Deploy.0 = Release|ARM
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Release|x64.ActiveCfg = Release|x64
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Release|x64.Build.0 = Release|x64
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Release|x64.Deploy.0 = Release|x64
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Release|x86.ActiveCfg = Release|x86
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Release|x86.Build.0 = Release|x86
+		{2A042690-CDE8-48E5-BD21-04DBD0A5F2F8}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
