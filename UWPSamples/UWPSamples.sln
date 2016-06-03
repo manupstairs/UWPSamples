@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventMemoryLeak", "EventMem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveUserControl", "AdaptiveUserControl\AdaptiveUserControl.csproj", "{B417F0AF-A5B8-4AB8-9EEB-6F32B18784DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotosBrowser", "PhotosBrowser\PhotosBrowser.csproj", "{783D151B-4737-4751-B059-F9C4A227430E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -173,6 +175,24 @@ Global
 		{B417F0AF-A5B8-4AB8-9EEB-6F32B18784DB}.Release|x86.ActiveCfg = Release|x86
 		{B417F0AF-A5B8-4AB8-9EEB-6F32B18784DB}.Release|x86.Build.0 = Release|x86
 		{B417F0AF-A5B8-4AB8-9EEB-6F32B18784DB}.Release|x86.Deploy.0 = Release|x86
+		{783D151B-4737-4751-B059-F9C4A227430E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{783D151B-4737-4751-B059-F9C4A227430E}.Debug|ARM.Build.0 = Debug|ARM
+		{783D151B-4737-4751-B059-F9C4A227430E}.Debug|ARM.Deploy.0 = Debug|ARM
+		{783D151B-4737-4751-B059-F9C4A227430E}.Debug|x64.ActiveCfg = Debug|x64
+		{783D151B-4737-4751-B059-F9C4A227430E}.Debug|x64.Build.0 = Debug|x64
+		{783D151B-4737-4751-B059-F9C4A227430E}.Debug|x64.Deploy.0 = Debug|x64
+		{783D151B-4737-4751-B059-F9C4A227430E}.Debug|x86.ActiveCfg = Debug|x86
+		{783D151B-4737-4751-B059-F9C4A227430E}.Debug|x86.Build.0 = Debug|x86
+		{783D151B-4737-4751-B059-F9C4A227430E}.Debug|x86.Deploy.0 = Debug|x86
+		{783D151B-4737-4751-B059-F9C4A227430E}.Release|ARM.ActiveCfg = Release|ARM
+		{783D151B-4737-4751-B059-F9C4A227430E}.Release|ARM.Build.0 = Release|ARM
+		{783D151B-4737-4751-B059-F9C4A227430E}.Release|ARM.Deploy.0 = Release|ARM
+		{783D151B-4737-4751-B059-F9C4A227430E}.Release|x64.ActiveCfg = Release|x64
+		{783D151B-4737-4751-B059-F9C4A227430E}.Release|x64.Build.0 = Release|x64
+		{783D151B-4737-4751-B059-F9C4A227430E}.Release|x64.Deploy.0 = Release|x64
+		{783D151B-4737-4751-B059-F9C4A227430E}.Release|x86.ActiveCfg = Release|x86
+		{783D151B-4737-4751-B059-F9C4A227430E}.Release|x86.Build.0 = Release|x86
+		{783D151B-4737-4751-B059-F9C4A227430E}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
