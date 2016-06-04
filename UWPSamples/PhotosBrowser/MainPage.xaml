@@ -10,8 +10,8 @@
     <FlipView ItemsSource="{Binding Photos,Mode=OneTime}">
         <FlipView.ItemTemplate>
             <DataTemplate>
-                <local:ScalableGrid>
-                    <Image Source="{Binding ImageUri,Mode=OneTime}"></Image>
+                <local:ScalableGrid Background="Transparent">
+                    <Image Source="{Binding ImageUri,Mode=OneTime}" Stretch="None"></Image>
                 </local:ScalableGrid>
             </DataTemplate>
         </FlipView.ItemTemplate>

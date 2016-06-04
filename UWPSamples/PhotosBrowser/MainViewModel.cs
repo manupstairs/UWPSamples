@@ -21,7 +21,7 @@ namespace PhotosBrowser
             {
                 new Photo { ImageUri = new Uri("ms-appx:///Assets/1.png") },
                 new Photo { ImageUri = new Uri("ms-appx:///Assets/2.png") },
-                new Photo { ImageUri = new Uri("ms-appx:///Assets/3.png") }
+                new Photo { ImageUri = new Uri("ms-appx:///Assets/3.jpg") }
             };
         }
     }
