@@ -9,6 +9,7 @@
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" VerticalAlignment="Center">
         <Button Click="Button_Click">Go to second page</Button>
+        <Button Click="Button_Click_2">Go to timer page</Button>
         <Button Click="Button_Click_1">Force GC</Button>
     </StackPanel>
 </Page>

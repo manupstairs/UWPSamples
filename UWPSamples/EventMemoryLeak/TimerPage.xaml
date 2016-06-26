@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="EventMemoryLeak.TimerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EventMemoryLeak"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox x:Name="TextBoxTimer"></TextBox>
+        <Button Click="Button_Click">Go back to main page</Button>
+
+        <!--内存泄漏，因为Children集合没有继承INotifyCollectionChanged-->
+        <TextBlock Text="{Binding ElementName=layoutRoot, Path=Children.Count}" />
+        <!--不会内存泄漏，因为ActualWidth是依赖属性-->
+        <TextBlock Text="{Binding ElementName=layoutRoot, Path=ActualWidth}" />
+        <!--不会内存泄漏，因为Mode = OneTime-->
+        <TextBlock Text="{Binding ElementName=layoutRoot, Path=Children.Count, Mode = OneTime}" />
+    </StackPanel>
+</Page>
