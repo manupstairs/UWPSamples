@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotosBrowser", "PhotosBrow
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentControlWithTemplateSelector", "ContentControlWithTemplateSelector\ContentControlWithTemplateSelector.csproj", "{1A73B775-E694-4CA1-A98D-6550B0E280F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceFamilyAndVirtualKey", "DeviceFamilyAndVirtualKey\DeviceFamilyAndVirtualKey.csproj", "{738F4F4A-D553-486C-83B3-31F902C19DDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -213,6 +215,24 @@ Global
 		{1A73B775-E694-4CA1-A98D-6550B0E280F6}.Release|x86.ActiveCfg = Release|x86
 		{1A73B775-E694-4CA1-A98D-6550B0E280F6}.Release|x86.Build.0 = Release|x86
 		{1A73B775-E694-4CA1-A98D-6550B0E280F6}.Release|x86.Deploy.0 = Release|x86
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Debug|ARM.ActiveCfg = Debug|ARM
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Debug|ARM.Build.0 = Debug|ARM
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Debug|ARM.Deploy.0 = Debug|ARM
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Debug|x64.ActiveCfg = Debug|x64
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Debug|x64.Build.0 = Debug|x64
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Debug|x64.Deploy.0 = Debug|x64
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Debug|x86.ActiveCfg = Debug|x86
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Debug|x86.Build.0 = Debug|x86
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Debug|x86.Deploy.0 = Debug|x86
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Release|ARM.ActiveCfg = Release|ARM
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Release|ARM.Build.0 = Release|ARM
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Release|ARM.Deploy.0 = Release|ARM
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Release|x64.ActiveCfg = Release|x64
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Release|x64.Build.0 = Release|x64
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Release|x64.Deploy.0 = Release|x64
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Release|x86.ActiveCfg = Release|x86
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Release|x86.Build.0 = Release|x86
+		{738F4F4A-D553-486C-83B3-31F902C19DDD}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
