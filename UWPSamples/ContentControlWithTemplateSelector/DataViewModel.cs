@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ContentControlWithTemplateSelector
 {
-    public class MainViewModel
+    public class DataViewModel
     {
         public ObservableCollection<Room> Rooms { get; set; }
 
-        public MainViewModel()
+        public DataViewModel()
         {
             Rooms = CreateRooms();
         }

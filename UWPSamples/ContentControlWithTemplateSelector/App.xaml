@@ -6,7 +6,7 @@
     RequestedTheme="Light">
     <Application.Resources>
         <local:CustomTemplateSelector x:Key="CustomTemplateSelector"></local:CustomTemplateSelector>
-        
+        <local:RoomTypeConverter x:Key="RoomTypeConverter"></local:RoomTypeConverter>
         <DataTemplate x:Key="Name">
             <Grid>
                 <Ellipse Fill="Green"></Ellipse>
