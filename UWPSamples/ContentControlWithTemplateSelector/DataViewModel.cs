@@ -19,7 +19,7 @@ namespace ContentControlWithTemplateSelector
         private ObservableCollection<Room> CreateRooms()
         {
             ObservableCollection<Room> rooms = new ObservableCollection<Room>();
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 10000; i++)
             {
                 var room = new Room { Index = i };
 

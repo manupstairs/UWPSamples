@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -29,12 +30,20 @@ namespace ContentControlWithTemplateSelector
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Stopwatch watcher = new Stopwatch();
+            watcher.Start();
             Frame.Navigate(typeof(TestPage1));
+            watcher.Stop();
+            Debug.WriteLine("testpage1 cost time:" + watcher.ElapsedMilliseconds);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            Stopwatch watcher = new Stopwatch();
+            watcher.Start();
             Frame.Navigate(typeof(TestPage2));
+            watcher.Stop();
+            Debug.WriteLine("testpage2 cost time:" + watcher.ElapsedMilliseconds);
         }
     }
 }
