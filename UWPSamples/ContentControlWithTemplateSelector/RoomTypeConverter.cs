@@ -13,6 +13,10 @@ namespace ContentControlWithTemplateSelector
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             var room = value as Room;
+            if (room == null)
+            {
+                return Visibility.Collapsed; ;
+            }
             var roomType = parameter.ToString();
 
             if (roomType == "Default")

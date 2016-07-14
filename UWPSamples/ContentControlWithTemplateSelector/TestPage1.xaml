@@ -7,8 +7,47 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <DataTemplate x:Key="AvatarWithVisibility">
+            <Grid >
+                <Grid Visibility="{Binding Converter={StaticResource RoomTypeConverter},ConverterParameter=Name}">
+                    <Ellipse Fill="Green"></Ellipse>
+                    <TextBlock Text="{Binding Index}" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                </Grid>
+                <Grid Visibility="{Binding Converter={StaticResource RoomTypeConverter},ConverterParameter=Image}">
+                    <Ellipse >
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding ImageUri}"></ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+                <Grid CacheMode="BitmapCache" Visibility="{Binding Converter={StaticResource RoomTypeConverter},ConverterParameter=Default}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Ellipse Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Fill="Green">
+                    </Ellipse>
+                    <Ellipse Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Fill="Orange">
+                    </Ellipse>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{Binding Rooms}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="listViewAvatar" Grid.Column="0" ItemsSource="{Binding Rooms}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -17,38 +56,9 @@
                             <ColumnDefinition></ColumnDefinition>
 
                         </Grid.ColumnDefinitions>
-                        <!--<ContentControl Grid.Column="0" ContentTemplateSelector="{StaticResource CustomTemplateSelector}"
-                                        Content="{Binding}" Width="50" Height="50" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"></ContentControl>-->
-                        <Grid Width="50" Height="50">
-                            <Grid Visibility="{Binding Converter={StaticResource RoomTypeConverter},ConverterParameter=Name}">
-                                <Ellipse Fill="Green"></Ellipse>
-                                <TextBlock Text="{Binding Index}" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                            </Grid>
-                            <Grid Visibility="{Binding Converter={StaticResource RoomTypeConverter},ConverterParameter=Image}">
-                                <Ellipse >
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="{Binding ImageUri}"></ImageBrush>
-                                    </Ellipse.Fill>
-                                </Ellipse>
-                            </Grid>
-                            <Grid CacheMode="BitmapCache" Visibility="{Binding Converter={StaticResource RoomTypeConverter},ConverterParameter=Default}">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition Height="2*"></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition Width="2*"></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
 
-                                <Ellipse Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Fill="Green">
-                                </Ellipse>
-                                <Ellipse Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Fill="Orange">
-                                </Ellipse>
-                            </Grid>
-                        </Grid>
+                        <ContentControl Grid.Column="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="50" Height="50"
+                                        ContentTemplate="{StaticResource AvatarWithVisibility}"></ContentControl>
                         
                         <StackPanel Grid.Column="1" >
                             <TextBlock  Text="{Binding Name}"></TextBlock>
@@ -59,5 +69,8 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <ContentControl Grid.Column="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                        Content="{Binding SelectedItem,ElementName=listViewAvatar}" Width="150" Height="150"
+                        ContentTemplate="{StaticResource AvatarWithVisibility}"></ContentControl>
     </Grid>
 </Page>

@@ -8,7 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{Binding Rooms}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="listViewAvatar" Grid.Column="0" ItemsSource="{Binding Rooms}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -27,6 +31,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-       
+
+        <ContentControl Grid.Column="1" ContentTemplateSelector="{StaticResource CustomTemplateSelector}"
+                        Content="{Binding SelectedItem,ElementName=listViewAvatar}" Width="150" Height="150"
+                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+        </ContentControl>
     </Grid>
 </Page>
