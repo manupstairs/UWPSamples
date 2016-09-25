@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateLayoutWhenKeyboardPop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeepUIResponsive", "KeepUIResponsive\KeepUIResponsive.csproj", "{EA7F3941-30C6-4349-9680-3EB26A22D3F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoryboardSample", "StoryboardSample\StoryboardSample.csproj", "{7CC115F5-4741-487D-BC29-563AC2EA0C29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -273,6 +275,24 @@ Global
 		{EA7F3941-30C6-4349-9680-3EB26A22D3F0}.Release|x86.ActiveCfg = Release|x86
 		{EA7F3941-30C6-4349-9680-3EB26A22D3F0}.Release|x86.Build.0 = Release|x86
 		{EA7F3941-30C6-4349-9680-3EB26A22D3F0}.Release|x86.Deploy.0 = Release|x86
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Debug|ARM.ActiveCfg = Debug|ARM
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Debug|ARM.Build.0 = Debug|ARM
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Debug|ARM.Deploy.0 = Debug|ARM
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Debug|x64.ActiveCfg = Debug|x64
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Debug|x64.Build.0 = Debug|x64
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Debug|x64.Deploy.0 = Debug|x64
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Debug|x86.ActiveCfg = Debug|x86
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Debug|x86.Build.0 = Debug|x86
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Debug|x86.Deploy.0 = Debug|x86
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Release|ARM.ActiveCfg = Release|ARM
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Release|ARM.Build.0 = Release|ARM
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Release|ARM.Deploy.0 = Release|ARM
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Release|x64.ActiveCfg = Release|x64
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Release|x64.Build.0 = Release|x64
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Release|x64.Deploy.0 = Release|x64
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Release|x86.ActiveCfg = Release|x86
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Release|x86.Build.0 = Release|x86
+		{7CC115F5-4741-487D-BC29-563AC2EA0C29}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
