@@ -7,53 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <Storyboard x:Key="Extend">
-            <DoubleAnimation 
-                Storyboard.TargetProperty="Width" 
-                Duration="0:0:2" From="200" To="400"/>
-        </Storyboard>
-        <!--<storyboard x:key="highlight">
-           <key
-        </storyboard>-->
-
-        <Style x:Key="PhotoItemContainerStyle" TargetType="ListViewItem">
-            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
-            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
-            <Setter Property="TabNavigation" Value="Local"/>
-            <Setter Property="IsHoldingEnabled" Value="True"/>
-            <Setter Property="Padding" Value="12,0,12,0"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="MinWidth" Value="{ThemeResource ListViewItemMinWidth}"/>
-            <Setter Property="MinHeight" Value="{ThemeResource ListViewItemMinHeight}"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ListViewItem">
-                        <ListViewItemPresenter CheckBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" ContentMargin="{TemplateBinding Padding}" 
-                                               CheckMode="Inline" ContentTransitions="{TemplateBinding ContentTransitions}" 
-                                               CheckBoxBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" 
-                                               DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}" DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" 
-                                               DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}" DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" 
-                                               FocusBorderBrush="{ThemeResource SystemControlForegroundAltHighBrush}" 
-                                               FocusSecondaryBorderBrush="{ThemeResource SystemControlForegroundBaseHighBrush}" 
-                                               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                               PointerOverForeground="{ThemeResource SystemControlHighlightAltBaseHighBrush}" 
-                                               PressedBackground="{ThemeResource SystemControlHighlightListMediumBrush}" 
-                                               PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" 
-                                               PointerOverBackground="Transparent" ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}" 
-                                               SelectedPressedBackground="{ThemeResource SystemControlHighlightListAccentHighBrush}" SelectionCheckMarkVisualEnabled="True" 
-                                               SelectedForeground="{ThemeResource SystemControlHighlightAltBaseHighBrush}" 
-                                               SelectedPointerOverBackground="{ThemeResource SystemControlHighlightListAccentMediumBrush}" 
-                                               SelectedBackground="{ThemeResource SystemControlHighlightListAccentLowBrush}" 
-                                               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="test1" TargetType="ListViewItem">
+        <Style x:Key="ListViewItemContainer" TargetType="ListViewItem">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
@@ -66,10 +20,6 @@
                                             <DoubleAnimation Duration="0:0:0.5" From="0.5" To="0" Storyboard.TargetProperty="Rectangle.Opacity" Storyboard.TargetName="listItem1" ></DoubleAnimation>
                                             <DoubleAnimation Duration="0:0:0.5" From="1" To="1.2" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="scaleGrid" ></DoubleAnimation>
                                             <DoubleAnimation Duration="0:0:0.5" From="1" To="1.2" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="scaleGrid" ></DoubleAnimation>
-                                      
-                                            <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.ZIndex)" Storyboard.TargetName="gridItemRoot">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="250"/>
-                                            </ObjectAnimationUsingKeyFrames>-->
                                         </Storyboard>
                                     </VisualState>
                                     <!--<VisualState x:Name="Pressed">
@@ -81,13 +31,13 @@
                             </VisualStateManager.VisualStateGroups>
                            
                             <Grid.Clip>
-                                <RectangleGeometry Rect="0 0 150 150"/>
+                                <RectangleGeometry Rect="0 0 200 200"/>
                             </Grid.Clip>
 
                             <Grid>
-                                <ContentPresenter >
+                                <ContentPresenter Width="200" Height="200">
                                     <ContentPresenter.RenderTransform>
-                                        <ScaleTransform x:Name="scaleGrid" ScaleX="1.0" ScaleY="1.0"></ScaleTransform>
+                                        <ScaleTransform x:Name="scaleGrid" ScaleX="1.0" ScaleY="1.0" CenterX="100" CenterY="100"></ScaleTransform>
                                     </ContentPresenter.RenderTransform>
                                 </ContentPresenter>
                                 <Rectangle x:Name="listItem1" Fill="Black" Opacity="0.5" Margin="0" />
@@ -99,17 +49,19 @@
         </Style>
     </Page.Resources>
 
-    <ListView ItemsSource="{Binding Photos,Mode=OneTime}" ItemContainerStyle="{StaticResource test1}" >
-        <ListView.ItemsPanel>
-            <ItemsPanelTemplate>
-                <ItemsWrapGrid></ItemsWrapGrid>
-            </ItemsPanelTemplate>
-        </ListView.ItemsPanel>
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <Image Source="{Binding ImageUri,Mode=OneTime}" MaxHeight="150" MaxWidth="200" ></Image>
-                
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <Grid>
+        <ListView ItemsSource="{Binding Photos,Mode=OneTime}" ItemContainerStyle="{StaticResource ListViewItemContainer}" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid Orientation="Horizontal"></ItemsWrapGrid>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding ImageUri,Mode=OneTime}" Stretch="UniformToFill" ></Image>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+       
+    </Grid>
 </Page>
