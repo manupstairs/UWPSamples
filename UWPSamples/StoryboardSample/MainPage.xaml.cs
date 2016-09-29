@@ -11,6 +11,8 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
@@ -24,11 +26,14 @@ namespace StoryboardSample
     {
         public List<PhotoModel> Photos { get; set; }
 
+        private Popup popup = new Popup();
+
         public MainPage()
         {
             this.InitializeComponent();
             Photos = CreatePhotos();
             this.DataContext = this;
+            popup.RenderTransform = new TranslateTransform();
         }
 
         private List<PhotoModel> CreatePhotos()
@@ -46,6 +51,42 @@ namespace StoryboardSample
                 new PhotoModel {  ImageUri = new Uri("ms-appx:///Assets/8.jpg")},
                 new PhotoModel {  ImageUri = new Uri("ms-appx:///Assets/9.jpg")}
             };
+        }
+
+        private void Image_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            popup.IsOpen = false;
+
+            var tappedImage = e.OriginalSource as Image;
+            var image = new Image { Source = tappedImage.Source };
+            popup.Child = image;
+            popup.IsOpen = true;
+
+            //获取被点击图片相对MainPage的坐标
+            var position = tappedImage.TransformToVisual(this).TransformPoint(new Point());
+            //获取MainPage的中心坐标
+            var xCenter = ActualWidth / 2 - 200 ;
+            var yCenter = ActualHeight / 2 - 200;
+
+            var storyBoard = new Storyboard();
+            var extendAnimation = new DoubleAnimation { Duration = new Duration(TimeSpan.FromSeconds(0.5)), From = 200, To = 400, EnableDependentAnimation = true };
+            Storyboard.SetTarget(extendAnimation, image);
+            Storyboard.SetTargetProperty(extendAnimation, "Width");
+            Storyboard.SetTargetProperty(extendAnimation, "Height");
+
+            var xAnimation = new DoubleAnimation { Duration = new Duration(TimeSpan.FromSeconds(0.5)), From = position.X, To = xCenter, EnableDependentAnimation = true };
+            Storyboard.SetTarget(xAnimation, popup);
+            Storyboard.SetTargetProperty(xAnimation, "(UIElement.RenderTransform).(TranslateTransform.X)");
+
+            var yAnimation = new DoubleAnimation { Duration = new Duration(TimeSpan.FromSeconds(0.5)), From = position.Y, To = yCenter, EnableDependentAnimation = true };
+            Storyboard.SetTarget(yAnimation, popup);
+            Storyboard.SetTargetProperty(yAnimation, "(UIElement.RenderTransform).(TranslateTransform.Y)");
+
+            storyBoard.Children.Add(extendAnimation);
+            storyBoard.Children.Add(xAnimation);
+            storyBoard.Children.Add(yAnimation);
+
+            storyBoard.Begin();
         }
     }
 }
