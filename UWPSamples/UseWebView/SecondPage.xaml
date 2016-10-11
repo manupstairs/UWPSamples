@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="UseWebView.SecondPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UseWebView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WebView Grid.Row="0" Grid.Column="0" local:WebViewEx.Uri="{Binding HtmlContent,Mode=OneTime}"></WebView>
+
+        <ContentControl Grid.Row="0" Grid.Column="1" Content="{Binding HtmlContent,Mode=OneTime}" >
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <WebView local:WebViewEx.Uri="{Binding}"></WebView>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+
+        <ContentControl  Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                         Content="{Binding HtmlContent,Mode=OneTime}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <WebView local:WebViewEx.Uri="{Binding}"></WebView>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+
+        <ContentControl  Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                         Content="{Binding HtmlContent,Mode=OneTime}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <WebView local:WebViewEx.AdaptiveUri="{Binding}"></WebView>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+    </Grid>
+</Page>

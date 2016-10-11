@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="UseWebView.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UseWebView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <WebView Source="http://www.cnblogs.com/manupstairs/"></WebView>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <Button Click="Button_Click">Load WebSite</Button>
+                <Button Click="Button_Click_1">Goto Second Page</Button>
+            </StackPanel>
+            
+            <WebView Grid.Row="1" x:Name="webViewManual"></WebView>
+        </Grid>
+    </Grid>
+</Page>
