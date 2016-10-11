@@ -12,37 +12,10 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition ></RowDefinition>
-            <RowDefinition ></RowDefinition>
-        </Grid.RowDefinitions>
 
-        <WebView Grid.Row="0" Grid.Column="0" local:WebViewEx.Uri="{Binding HtmlContent,Mode=OneTime}"></WebView>
+        <WebView Grid.Column="0" local:WebViewEx.Uri="{x:Bind HtmlContent}"></WebView>
 
-        <ContentControl Grid.Row="0" Grid.Column="1" Content="{Binding HtmlContent,Mode=OneTime}" >
-            <ContentControl.ContentTemplate>
-                <DataTemplate>
-                    <WebView local:WebViewEx.Uri="{Binding}"></WebView>
-                </DataTemplate>
-            </ContentControl.ContentTemplate>
-        </ContentControl>
-
-        <ContentControl  Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
-                         Content="{Binding HtmlContent,Mode=OneTime}">
-            <ContentControl.ContentTemplate>
-                <DataTemplate>
-                    <WebView local:WebViewEx.Uri="{Binding}"></WebView>
-                </DataTemplate>
-            </ContentControl.ContentTemplate>
-        </ContentControl>
-
-        <ContentControl  Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
-                         Content="{Binding HtmlContent,Mode=OneTime}">
-            <ContentControl.ContentTemplate>
-                <DataTemplate>
-                    <WebView local:WebViewEx.AdaptiveUri="{Binding}"></WebView>
-                </DataTemplate>
-            </ContentControl.ContentTemplate>
-        </ContentControl>
+        <WebView Grid.Column="1" local:WebViewEx.AdaptiveUri="{x:Bind HtmlContent}"></WebView>
+            
     </Grid>
 </Page>

@@ -22,44 +22,19 @@ namespace UseWebView
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class SecondPage : Page//, INotifyPropertyChanged
+    public sealed partial class SecondPage : Page
     {
         public string HtmlContent
         {
             get
             {
-                // return "<p> <img id =\"pic\" class=\"M_cur_zoom_out\" src=\"http://ww4.sinaimg.cn/large/41467e42jw1f8himcfgnoj20gj1ax793.jpg\" /> </p> <p> 微信订阅号 zhangzishi_weixin 合作请直接联系 tintin@zhangzishi.cc</p>";
                 return "<p> <img src =\"http://ww3.sinaimg.cn/mw690/9e6b7fdbjw1f8m2oaw2hbj20k00qogoi.jpg\"  /></p>";
             }
         }
 
-        //private string htmlContent2;
-        //public string HtmlContent2
-        //{
-        //    get { return htmlContent2; }
-        //    set
-        //    {
-        //        htmlContent2 = value;
-        //        this.OnPropertyChanged();
-        //    }
-        //}
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //private void OnPropertyChanged([CallerMemberName] string name = null)
-        //{
-        //    this.PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(name));
-        //}
-
         public SecondPage()
         {
             this.InitializeComponent();
-            this.DataContext = this;
         }
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    this.HtmlContent2 = HtmlContent;
-        //}
     }
 }
