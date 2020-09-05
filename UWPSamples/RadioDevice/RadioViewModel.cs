@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Devices.Enumeration;
 using Windows.Devices.Radios;
 
 
@@ -25,6 +26,11 @@ namespace RadioDevice
             }
         }
 
+        public bool IsAvailable
+        {
+            get => RadioModel != null;
+        }
+
         public RadioViewModel(RadioKind radioKind)
         {
             RadioKind = radioKind;
@@ -34,8 +40,18 @@ namespace RadioDevice
 
         public async Task InitializeAsync()
         {
-            var radios = await Radio.GetRadiosAsync();
-            RadioModel = radios.FirstOrDefault(r => r.Kind == RadioKind);
+            //var radios = await Radio.GetRadiosAsync();
+            //RadioModel = radios.FirstOrDefault(r => r.Kind == RadioKind);
+            var selectorString = Radio.GetDeviceSelector();
+            var deviceInfos = await DeviceInformation.FindAllAsync(selectorString);
+            foreach (var deviceInfo in deviceInfos)
+            {
+                var radio = await Radio.FromIdAsync(deviceInfo.Id);
+                if (radio.Kind == RadioKind)
+                {
+                    RadioModel = radio;
+                }
+            }
             this.OnPropertyChanged("IsOn");
         }
 

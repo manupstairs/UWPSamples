@@ -26,7 +26,8 @@
                       Header="Bluetooth" OffContent="Off" OnContent="On" IsOn="{Binding IsOn,Mode=TwoWay}"></ToggleSwitch>
         <ToggleSwitch Grid.Row="2" Grid.Column="1" DataContext="{x:Bind WiFiViewModel,Mode=OneWay}"
                       Header="WiFi" OffContent="Off" OnContent="On" IsOn="{Binding IsOn,Mode=TwoWay}"></ToggleSwitch>
-        <!--<ToggleSwitch Grid.Row="3" Grid.Column="1" DataContext="{x:Bind CellularViewModel,Mode=OneWay}"
-                      Header="Cellular" OffContent="Off" OnContent="On" IsOn="{Binding IsOn,Mode=TwoWay}"></ToggleSwitch>-->
+        <ToggleSwitch Grid.Row="3" Grid.Column="1" DataContext="{x:Bind CellularViewModel,Mode=OneWay}"
+                      Header="Cellular" OffContent="Off" OnContent="On" IsOn="{Binding IsOn,Mode=TwoWay}"
+                      IsEnabled="{Binding IsAvailable,Mode=OneWay}"></ToggleSwitch>
     </Grid>
 </Page>

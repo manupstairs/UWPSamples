@@ -30,6 +30,8 @@ namespace RadioDevice
 
         public WiFiViewModel WiFiViewModel { get; private set; }
 
+        public CellularViewModel CellularViewModel { get; private set; }
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -51,6 +53,10 @@ namespace RadioDevice
             WiFiViewModel = new WiFiViewModel();
             await WiFiViewModel.InitializeAsync();
             this.OnPropertyChanged("WiFiViewModel");
+
+            CellularViewModel = new CellularViewModel();
+            await CellularViewModel.InitializeAsync();
+            this.OnPropertyChanged("CellularViewModel");
         }
 
         private void OnPropertyChanged([CallerMemberName] string name = null)
