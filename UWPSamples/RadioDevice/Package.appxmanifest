@@ -45,7 +45,6 @@
   </Applications>
 
   <Capabilities>
-    <rescap:Capability Name="cellularDeviceIdentity"/>
     <rescap:Capability Name="cellularDeviceControl"/>
     <DeviceCapability Name="radios"/>
   </Capabilities>
