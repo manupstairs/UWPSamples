@@ -65,7 +65,8 @@ namespace RadioDevice
             if (RadioAccessStatus.Allowed == await Radio.RequestAccessAsync())
             {
                 var state = isOn ? RadioState.On : RadioState.Off;
-                await RadioModel.SetStateAsync(state);
+                var test = await RadioModel.SetStateAsync(state);
+                test = RadioAccessStatus.Allowed;
             }
         }
     }

@@ -4,7 +4,8 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  IgnorableNamespaces="uap mp">
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap mp rescap">
 
   <Identity
     Name="52b0028c-5f85-49cb-bc73-174c41354261"
@@ -44,7 +45,8 @@
   </Applications>
 
   <Capabilities>
-    <Capability Name="internetClient" />
-    <DeviceCapability Name="radios"></DeviceCapability>
+    <rescap:Capability Name="cellularDeviceIdentity"/>
+    <rescap:Capability Name="cellularDeviceControl"/>
+    <DeviceCapability Name="radios"/>
   </Capabilities>
 </Package>
