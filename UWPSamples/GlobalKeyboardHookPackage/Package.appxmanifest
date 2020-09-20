@@ -30,6 +30,11 @@
     <Application Id="App"
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
+      <Extensions>
+        <uap:Extension Category="windows.appService">
+          <uap:AppService Name="InProcessAppService" />
+        </uap:Extension>
+      </Extensions>
       <uap:VisualElements
         DisplayName="GlobalKeyboardHookPackage"
         Description="GlobalKeyboardHookPackage"

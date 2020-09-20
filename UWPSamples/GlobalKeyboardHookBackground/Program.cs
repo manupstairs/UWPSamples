@@ -10,6 +10,7 @@ namespace GlobalKeyboardHookBackground
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
