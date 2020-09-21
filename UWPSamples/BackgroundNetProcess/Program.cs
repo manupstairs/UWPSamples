@@ -10,6 +10,8 @@ namespace BackgroundNetProcess
     {
         static void Main(string[] args)
         {
+            var backgroundProcess = new BackgroundProcess();
+            Console.ReadKey();
         }
     }
 }

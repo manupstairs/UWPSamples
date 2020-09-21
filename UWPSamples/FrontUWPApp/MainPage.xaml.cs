@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +27,30 @@ namespace FrontUWPApp
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
+            {
+                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+                AppServiceHandler.Instance.MessageReceivedEvent += Instance_MessageReceivedEvent;
+            }
+        }
+
+        private async void Instance_MessageReceivedEvent(object sender, string e)
+        {
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+             {
+                 textBoxResponses.Text += e + "\r\n";
+             });
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var response = await AppServiceHandler.Instance.SendRequestAsync(textBoxRequest.Text);
         }
     }
 }

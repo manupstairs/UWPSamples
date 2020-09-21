@@ -96,5 +96,11 @@ namespace FrontUWPApp
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+
+        protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+        {
+            base.OnBackgroundActivated(args);
+            AppServiceHandler.Instance.BackgroundActivated(args.TaskInstance);
+        }
     }
 }

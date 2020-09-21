@@ -5,7 +5,8 @@
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap mp rescap">
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  IgnorableNamespaces="uap mp rescap desktop">
 
   <Identity
     Name="5ffa0cd6-75d8-406f-a43a-ebf1112884de"
@@ -31,6 +32,12 @@
     <Application Id="App"
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
+      <Extensions>
+        <uap:Extension Category="windows.appService">
+          <uap:AppService Name="NotificationAppService" />
+        </uap:Extension>
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="BackgroundNetProcess\BackgroundNetProcess.exe"></desktop:Extension>
+      </Extensions>
       <uap:VisualElements
         DisplayName="AppServiceCommunication"
         Description="AppServiceCommunication"

@@ -8,7 +8,11 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-
-    </Grid>
+    <StackPanel>
+        <TextBlock>Send message to background:</TextBlock>
+        <TextBox x:Name="textBoxRequest"></TextBox>
+        <Button Click="Button_Click">Send</Button>
+        <TextBlock>Received message from background:</TextBlock>
+        <TextBox x:Name="textBoxResponses" AcceptsReturn="True"></TextBox>
+    </StackPanel>
 </Page>
