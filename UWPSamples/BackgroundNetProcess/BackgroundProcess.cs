@@ -30,12 +30,10 @@ namespace BackgroundNetProcess
             if (status != AppServiceConnectionStatus.Success)
             {
                 Console.WriteLine(status);
-                Debug.WriteLine(status);
             }
             else
             {
                 Console.WriteLine(status);
-                Debug.WriteLine(status);
                 Connection.RequestReceived += Connection_RequestReceived;
             }
         }
