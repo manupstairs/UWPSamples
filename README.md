@@ -1,4 +1,4 @@
-## Repository包含了我博客中，关于UWP的一些示例代码。
+## 该Repository包含了我博客里，所有UWP随笔中的Sample Project。
 
 * 2020年的UWP（2）——In Process App Service
   * https://www.cnblogs.com/manupstairs/p/13853418.html
