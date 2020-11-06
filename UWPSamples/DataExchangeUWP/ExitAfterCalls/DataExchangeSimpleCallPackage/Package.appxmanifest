@@ -41,7 +41,12 @@
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
 		<Extensions>
-			<desktop:Extension Category="windows.fullTrustProcess" Executable="ExistAfterCallsProgram\ExistAfterCallsProgram.exe"/>
+			<desktop:Extension Category="windows.fullTrustProcess" Executable="ExistAfterCallsProgram\ExistAfterCallsProgram.exe">
+				<desktop:FullTrustProcess>
+					<desktop:ParameterGroup GroupId="LockScreen" Parameters="LockScreen" />
+					<desktop:ParameterGroup GroupId="ControlPanel" Parameters="ControlPanel" />
+				</desktop:FullTrustProcess>
+			</desktop:Extension>
 		</Extensions>
     </Application>
   </Applications>

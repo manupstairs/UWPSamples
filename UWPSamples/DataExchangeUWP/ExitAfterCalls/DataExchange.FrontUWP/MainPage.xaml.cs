@@ -28,9 +28,14 @@ namespace DataExchange.FrontUWP
             this.InitializeComponent();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void ButtonLockScreen_Click(object sender, RoutedEventArgs e)
         {
-            await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+            await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("LockScreen");
+        }
+
+        private async void ButtonControlPanel_Click(object sender, RoutedEventArgs e)
+        {
+            await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("ControlPanel");
         }
     }
 }
