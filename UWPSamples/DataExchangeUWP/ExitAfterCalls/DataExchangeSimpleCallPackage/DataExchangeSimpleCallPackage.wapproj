@@ -55,7 +55,7 @@
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
-    <EntryPointProjectUniqueName>..\ExistAfterCallsProgram\ExistAfterCallsProgram.csproj</EntryPointProjectUniqueName>
+    <EntryPointProjectUniqueName>..\DataExchange.FrontUWP\DataExchange.FrontUWP.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

@@ -10,6 +10,10 @@ namespace ExistAfterCallsProgram
     {
         static void Main(string[] args)
         {
+            var program = new BackgroundProgram();
+            program.LockScreen();
         }
+
+       
     }
 }
