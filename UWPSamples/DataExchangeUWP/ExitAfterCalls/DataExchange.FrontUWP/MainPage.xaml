@@ -19,5 +19,6 @@
     <StackPanel>
         <Button Click="ButtonLockScreen_Click">Lock Screen</Button>
         <Button Click="ButtonControlPanel_Click">Control Panel</Button>
+        <Button Click="ButtonLocalSettings_Click">Local Settings</Button>
     </StackPanel>
 </Page>

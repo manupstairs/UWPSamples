@@ -45,6 +45,7 @@
 				<desktop:FullTrustProcess>
 					<desktop:ParameterGroup GroupId="LockScreen" Parameters="LockScreen" />
 					<desktop:ParameterGroup GroupId="ControlPanel" Parameters="ControlPanel" />
+          <desktop:ParameterGroup GroupId="LocalSettings" Parameters="LocalSettings" />
 				</desktop:FullTrustProcess>
 			</desktop:Extension>
 		</Extensions>

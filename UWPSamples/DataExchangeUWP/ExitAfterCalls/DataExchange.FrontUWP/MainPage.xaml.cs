@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -36,6 +37,12 @@ namespace DataExchange.FrontUWP
         private async void ButtonControlPanel_Click(object sender, RoutedEventArgs e)
         {
             await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("ControlPanel");
+        }
+
+        private async void ButtonLocalSettings_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationData.Current.LocalSettings.Values["content"] = "mspaint.exe";
+            await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("LocalSettings");
         }
     }
 }

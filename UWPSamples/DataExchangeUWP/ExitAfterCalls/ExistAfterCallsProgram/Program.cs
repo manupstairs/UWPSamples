@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 
 namespace ExistAfterCallsProgram
 {
@@ -24,6 +25,11 @@ namespace ExistAfterCallsProgram
                 case "ControlPanel":
                     Process.Start("control.exe");
                     break;
+                case "LocalSettings":
+                    var content = ApplicationData.Current.LocalSettings.Values["content"].ToString();
+                    Process.Start(content);
+                    break;
+
             }
         }
     }
