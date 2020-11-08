@@ -8,6 +8,8 @@
 
 * 2020年的UWP（1）——通过Radio类控制Cellular
   * https://www.cnblogs.com/manupstairs/p/13621673.html
+* UWP开发入门（25）——通过Radio控制Bluetooth, WiFi
+  * https://www.cnblogs.com/manupstairs/p/13022067.html
   * RadioDevice
 
 * UWP开发入门（二十四）—— Win10风格的打印对话框
