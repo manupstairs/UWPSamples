@@ -12,6 +12,10 @@
   * https://www.cnblogs.com/manupstairs/p/13022067.html
   * RadioDevice
 
-* UWP开发入门（二十四）—— Win10风格的打印对话框
+* UWP开发入门（24）—— Win10风格的打印对话框
   * https://www.cnblogs.com/manupstairs/p/11688656.html
   * PrintingSample
+  
+* UWP开发入门（23）——WebView
+  * https://www.cnblogs.com/manupstairs/p/5951087.html
+  * UseWebView
