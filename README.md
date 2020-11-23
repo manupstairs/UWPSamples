@@ -19,3 +19,7 @@
 * UWP开发入门（23）——WebView
   * https://www.cnblogs.com/manupstairs/p/5951087.html
   * UseWebView
+  
+* UWP开发入门（2）——Storyboard和Animation
+  * https://www.cnblogs.com/manupstairs/p/5922200.html
+  * StoryboardSample
