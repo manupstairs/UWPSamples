@@ -1,5 +1,9 @@
 ## 该Repository包含了我博客里，UWP分类中的Sample Project。
 
+* 2020年的UWP(3)——UWP和desktop extension的简单交互
+  * https://www.cnblogs.com/manupstairs/p/13956235.html
+  * DataExchangeUWP/ExitAfterCalls
+  
 * 2020年的UWP（2）——In Process App Service
   * https://www.cnblogs.com/manupstairs/p/13853418.html
   * AppServiceCommunication
