@@ -3,7 +3,7 @@
 * 2020年的UWP(3)——UWP和desktop extension的简单交互
   * https://www.cnblogs.com/manupstairs/p/13956235.html
   * DataExchangeUWP/ExitAfterCalls
-  
+
 * 2020年的UWP（2）——In Process App Service
   * https://www.cnblogs.com/manupstairs/p/13853418.html
   * AppServiceCommunication
@@ -27,3 +27,7 @@
 * UWP开发入门（22）——Storyboard和Animation
   * https://www.cnblogs.com/manupstairs/p/5922200.html
   * StoryboardSample
+  
+* UWP开发入门（21）——保持UI线程处于响应状态
+  * https://www.cnblogs.com/manupstairs/p/5831604.html
+  * KeepUIResponsive
