@@ -1,4 +1,8 @@
-## 该Repository包含了我博客里，所有UWP随笔中的Sample Project。
+## 该Repository包含了我博客里，UWP分类中的Sample Project。
+
+* 2020年的UWP(3)——UWP和desktop extension的简单交互
+  * https://www.cnblogs.com/manupstairs/p/13956235.html
+  * DataExchangeUWP/ExitAfterCalls
 
 * 2020年的UWP（2）——In Process App Service
   * https://www.cnblogs.com/manupstairs/p/13853418.html
@@ -12,6 +16,18 @@
   * https://www.cnblogs.com/manupstairs/p/13022067.html
   * RadioDevice
 
-* UWP开发入门（二十四）—— Win10风格的打印对话框
+* UWP开发入门（24）—— Win10风格的打印对话框
   * https://www.cnblogs.com/manupstairs/p/11688656.html
   * PrintingSample
+  
+* UWP开发入门（23）——WebView
+  * https://www.cnblogs.com/manupstairs/p/5951087.html
+  * UseWebView
+  
+* UWP开发入门（22）——Storyboard和Animation
+  * https://www.cnblogs.com/manupstairs/p/5922200.html
+  * StoryboardSample
+  
+* UWP开发入门（21）——保持UI线程处于响应状态
+  * https://www.cnblogs.com/manupstairs/p/5831604.html
+  * KeepUIResponsive
