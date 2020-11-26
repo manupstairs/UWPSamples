@@ -31,6 +31,13 @@ namespace OnewayRequest.FrontUWP
         private async void ButtonLaunchApp_Click(object sender, RoutedEventArgs e)
         {
             await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("LaunchApp");
+            AppServiceHandler.Instance.Connected += Instance_Connected;
+        }
+
+        private void Instance_Connected(object sender, AppServiceConnectionConnectedEventArgs e)
+        {
+            AppServiceHandler.Instance.Connected -= Instance_Connected;
+            
         }
     }
 }
