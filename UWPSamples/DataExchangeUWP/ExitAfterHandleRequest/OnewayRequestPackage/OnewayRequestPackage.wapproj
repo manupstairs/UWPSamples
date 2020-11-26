@@ -72,8 +72,8 @@
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ExitAfterCalls\WaitRequestThenExit\WaitRequestThenExit.csproj" />
     <ProjectReference Include="..\OnewayRequest.FrontUWP\OnewayRequest.FrontUWP.csproj" />
+    <ProjectReference Include="..\WaitRequestThenExit\WaitRequestThenExit.csproj" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>
