@@ -10,9 +10,9 @@ namespace WaitRequestThenExit
     {
         static void Main(string[] args)
         {
-            var requestHandler = new AppServiceRequestHandler();
+            new LanuchAppHandler();
 
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }

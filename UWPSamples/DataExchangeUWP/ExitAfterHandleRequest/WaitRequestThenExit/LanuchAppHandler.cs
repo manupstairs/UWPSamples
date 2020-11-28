@@ -10,13 +10,13 @@ using Windows.Foundation.Collections;
 
 namespace WaitRequestThenExit
 {
-    class AppServiceRequestHandler
+    class LanuchAppHandler
     {
         private AppServiceConnection Connection { get; set; }
 
         public Task InitializeTask { get; private set; }
 
-        public AppServiceRequestHandler()
+        public LanuchAppHandler()
         {
             InitializeTask = InitializeAsync();
         }
@@ -43,6 +43,7 @@ namespace WaitRequestThenExit
             var content = args.Request.Message["FileName"].ToString();
             Process.Start(content);
             Console.WriteLine("Will exit after received.");
+            //Environment.Exit(0);
         }
     }
 }
