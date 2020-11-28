@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,8 +31,11 @@ namespace OnewayRequest.FrontUWP
 
         private async void ButtonLaunchApp_Click(object sender, RoutedEventArgs e)
         {
-            await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("LaunchApp");
-            AppServiceHandler.Instance.Connected += Instance_Connected;
+            if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
+            {
+                AppServiceHandler.Instance.Connected += Instance_Connected;
+                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("LaunchApp");
+            }
         }
 
         private void Instance_Connected(object sender, AppServiceConnectionConnectedEventArgs e)
