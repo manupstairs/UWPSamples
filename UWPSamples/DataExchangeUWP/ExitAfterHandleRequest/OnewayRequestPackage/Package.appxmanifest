@@ -41,6 +41,9 @@
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
+        <uap:Extension Category="windows.appService">
+          <uap:AppService Name="ParameterAppService" />
+        </uap:Extension>
         <desktop:Extension Category="windows.fullTrustProcess" Executable="WaitRequestThenExit\WaitRequestThenExit.exe"/>
       </Extensions>
     </Application>

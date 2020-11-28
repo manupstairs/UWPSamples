@@ -11,7 +11,6 @@ namespace WaitRequestThenExit
         static void Main(string[] args)
         {
             var requestHandler = new AppServiceRequestHandler();
-            requestHandler.InitializeAsync();
 
             Console.ReadLine();
         }

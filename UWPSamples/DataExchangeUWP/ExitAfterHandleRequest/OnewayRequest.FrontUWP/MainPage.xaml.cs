@@ -43,8 +43,8 @@ namespace OnewayRequest.FrontUWP
         {
             AppServiceHandler.Instance.Connected -= Instance_Connected;
             var valueSet = new ValueSet();
-            valueSet.Add("FileName", ComboBoxFileName.Text);
-            await e.Connection.SendMessageAsync(valueSet);
+            valueSet.Add("FileName", ComboBoxFileName.SelectionBoxItem);
+            var response = await e.Connection.SendMessageAsync(valueSet);
         }
     }
 }

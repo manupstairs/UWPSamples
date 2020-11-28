@@ -25,7 +25,7 @@ namespace WaitRequestThenExit
         {
             Connection = new AppServiceConnection();
             Connection.PackageFamilyName = Package.Current.Id.FamilyName;
-            Connection.AppServiceName = "NotificationAppService";
+            Connection.AppServiceName = "ParameterAppService";
             AppServiceConnectionStatus status = await Connection.OpenAsync();
             if (status != AppServiceConnectionStatus.Success)
             {

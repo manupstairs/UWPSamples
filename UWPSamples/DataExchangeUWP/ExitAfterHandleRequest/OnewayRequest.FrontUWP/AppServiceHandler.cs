@@ -37,8 +37,8 @@ namespace OnewayRequest.FrontUWP
 
         public void OnBackgroundActivated(AppServiceTriggerDetails details)
         {
-            Connected?.Invoke(this, new AppServiceConnectionConnectedEventArgs(details.AppServiceConnection));
             Connection = details.AppServiceConnection;
+            Connected?.Invoke(this, new AppServiceConnectionConnectedEventArgs(Connection));
             Connection.RequestReceived += Connection_RequestReceived;
         }
 
