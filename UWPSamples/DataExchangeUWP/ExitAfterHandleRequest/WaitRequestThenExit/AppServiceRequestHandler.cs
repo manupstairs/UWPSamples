@@ -40,8 +40,9 @@ namespace WaitRequestThenExit
 
         private void Connection_RequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
         {
-            var content = args.Request.Message["request"].ToString();
+            var content = args.Request.Message["FileName"].ToString();
             Process.Start(content);
+            Console.WriteLine("Will exit after received.");
         }
     }
 }

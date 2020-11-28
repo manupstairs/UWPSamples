@@ -17,8 +17,8 @@
     </Page.Resources>
 
     <StackPanel>
-        <ComboBox>
-            <ComboBoxItem>ControlPanel</ComboBoxItem>
+        <ComboBox x:Name="ComboBoxFileName" SelectedIndex="1">
+            <ComboBoxItem>control.exe</ComboBoxItem>
             <ComboBoxItem>mspaint.exe</ComboBoxItem>
         </ComboBox>
         <Button Click="ButtonLaunchApp_Click">LaunchApp</Button>

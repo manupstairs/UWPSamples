@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
+using Windows.ApplicationModel.AppService;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
@@ -34,14 +35,16 @@ namespace OnewayRequest.FrontUWP
             if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
             {
                 AppServiceHandler.Instance.Connected += Instance_Connected;
-                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("LaunchApp");
+                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
             }
         }
 
-        private void Instance_Connected(object sender, AppServiceConnectionConnectedEventArgs e)
+        private async void Instance_Connected(object sender, AppServiceConnectionConnectedEventArgs e)
         {
             AppServiceHandler.Instance.Connected -= Instance_Connected;
-            
+            var valueSet = new ValueSet();
+            valueSet.Add("FileName", ComboBoxFileName.Text);
+            await e.Connection.SendMessageAsync(valueSet);
         }
     }
 }
