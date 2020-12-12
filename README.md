@@ -35,3 +35,7 @@
 * UWP开发入门（21）——保持UI线程处于响应状态
   * https://www.cnblogs.com/manupstairs/p/5831604.html
   * KeepUIResponsive
+  
+* UWP开发入门（20）——键盘弹起时变更界面布局
+  * https://www.cnblogs.com/manupstairs/p/5738387.html
+  * UpdateLayoutWhenKeyboardPopup
