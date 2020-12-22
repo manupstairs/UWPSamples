@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
+using Windows.ApplicationModel.AppService;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
@@ -26,36 +27,39 @@ namespace TwoWayExchange.FrontUWP
     /// </summary>
     public sealed partial class MainPage : Page 
     {
+        private AppServiceConnection Connection { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
-            AppServiceHandler.Instance.RequestReceived += Instance_RequestReceived;
+
+            if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
+            {
+                AppServiceHandler.Instance.RequestReceived += Instance_RequestReceived;
+                AppServiceHandler.Instance.Connected += Instance_Connected;
+                FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+            }
         }
 
         private void Instance_RequestReceived(object sender, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs e)
         {
             var message = e.Request.Message;
-            if (message.Keys.Contains("Desktop"))
+            if (message.TryGetValue("Desktop", out object content))
             {
-                this.textBoxReceive.Text += $"{message["receive"]}\n";
+                this.textBoxReceive.Text += $"{content}\n";
             }
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
-            {
-                AppServiceHandler.Instance.Connected += Instance_Connected;
-                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
-            }
-        }
-
-        private async void Instance_Connected(object sender, AppServiceConnectionConnectedEventArgs e)
-        {
-            AppServiceHandler.Instance.Connected -= Instance_Connected;
             var valueSet = new ValueSet();
             valueSet.Add("UWP", this.textBoxSend.Text);
-            var response = await e.Connection.SendMessageAsync(valueSet);
+            var response = await Connection.SendMessageAsync(valueSet);
+        }
+
+        private void Instance_Connected(object sender, AppServiceConnectionConnectedEventArgs e)
+        {
+            Connection = e.Connection;
         }
     }
 }

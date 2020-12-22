@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.AppService;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -95,6 +96,21 @@ namespace TwoWayExchange.FrontUWP
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+        {
+            base.OnBackgroundActivated(args);
+            if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails details)
+            {
+                if (details.CallerPackageFamilyName == Package.Current.Id.FamilyName)
+                {
+                    var deferral = args.TaskInstance.GetDeferral();
+                    args.TaskInstance.Canceled += (sender, e) => { deferral?.Complete(); };
+                    AppServiceHandler.Instance.OnBackgroundActivated(details);
+                }
+
+            }
         }
     }
 }

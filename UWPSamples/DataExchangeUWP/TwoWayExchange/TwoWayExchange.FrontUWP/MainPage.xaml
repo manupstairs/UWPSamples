@@ -18,7 +18,7 @@
 
     <StackPanel>
         <TextBox x:Name="textBoxSend"></TextBox>
-        <Button Click="Button_Click">LaunchDesktopExtension</Button>
+        <Button Click="Button_Click">Send Message To Desktop</Button>
         <TextBox x:Name="textBoxReceive" AcceptsReturn="True"></TextBox>
     </StackPanel>
 </Page>
