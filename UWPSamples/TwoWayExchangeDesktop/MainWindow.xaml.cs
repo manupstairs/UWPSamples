@@ -54,8 +54,10 @@ namespace TwoWayExchangeDesktop
 
         private void Connection_RequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
         {
-            var content = args.Request.Message["UWP"].ToString();
-            this.textBoxReceive.Text += $"{content}\n";
+            if (args.Request.Message.TryGetValue("UWP", out object content))
+            {
+                Dispatcher.Invoke(() => { this.textBoxReceive.Text += $"{content}\n"; });
+            }
         }
     }
 }

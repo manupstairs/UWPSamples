@@ -41,12 +41,13 @@ namespace TwoWayExchange.FrontUWP
             }
         }
 
-        private void Instance_RequestReceived(object sender, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs e)
+        private async void Instance_RequestReceived(object sender, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs e)
         {
             var message = e.Request.Message;
             if (message.TryGetValue("Desktop", out object content))
             {
-                this.textBoxReceive.Text += $"{content}\n";
+                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                 { this.textBoxReceive.Text += $"{content}\n"; });
             }
         }
 
