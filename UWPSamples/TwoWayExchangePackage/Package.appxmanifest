@@ -4,7 +4,8 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap rescap">
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  IgnorableNamespaces="uap rescap desktop">
 
   <Identity
     Name="b557c64e-e9b6-47ad-bee0-42ea5ee2bcff"
@@ -39,6 +40,12 @@
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.appService">
+          <uap:AppService Name="TwoWayExchangeAppService" />
+        </uap:Extension>
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="TwoWayExchangeDesktop\TwoWayExchangeDesktop.exe"/>
+      </Extensions>
     </Application>
   </Applications>
 
