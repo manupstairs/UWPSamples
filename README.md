@@ -1,6 +1,10 @@
 ## 该Repository包含了我博客里，UWP分类中的Sample Project。
 
-* 2020年的UWP(3)——UWP和desktop extension的简单交互
+* 2020年的UWP（4）——UWP和等待Request的Desktop Extension
+  * https://www.cnblogs.com/manupstairs/p/14065673.html
+  * DataExchangeUWP/ExitAfterHandleRequest
+
+* 2020年的UWP（3）——UWP和desktop extension的简单交互
   * https://www.cnblogs.com/manupstairs/p/13956235.html
   * DataExchangeUWP/ExitAfterCalls
 
@@ -31,3 +35,7 @@
 * UWP开发入门（21）——保持UI线程处于响应状态
   * https://www.cnblogs.com/manupstairs/p/5831604.html
   * KeepUIResponsive
+  
+* UWP开发入门（20）——键盘弹起时变更界面布局
+  * https://www.cnblogs.com/manupstairs/p/5738387.html
+  * UpdateLayoutWhenKeyboardPopup
