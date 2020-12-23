@@ -109,7 +109,6 @@ namespace TwoWayExchange.FrontUWP
                     args.TaskInstance.Canceled += (sender, e) => { deferral?.Complete(); };
                     AppServiceHandler.Instance.OnBackgroundActivated(details);
                 }
-
             }
         }
     }

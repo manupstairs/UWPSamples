@@ -35,19 +35,8 @@ namespace TwoWayExchange.FrontUWP
 
             if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
             {
-                AppServiceHandler.Instance.RequestReceived += Instance_RequestReceived;
                 AppServiceHandler.Instance.Connected += Instance_Connected;
                 FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
-            }
-        }
-
-        private async void Instance_RequestReceived(object sender, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs e)
-        {
-            var message = e.Request.Message;
-            if (message.TryGetValue("Desktop", out object content))
-            {
-                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-                 { this.textBoxReceive.Text += $"{content}\n"; });
             }
         }
 
@@ -60,7 +49,19 @@ namespace TwoWayExchange.FrontUWP
 
         private void Instance_Connected(object sender, AppServiceConnectionConnectedEventArgs e)
         {
+            AppServiceHandler.Instance.Connected -= Instance_Connected;
             Connection = e.Connection;
+            Connection.RequestReceived += Connection_RequestReceived;
+        }
+
+        private async void Connection_RequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
+        {
+            var message = args.Request.Message;
+            if (message.TryGetValue("Desktop", out object content))
+            {
+                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                { this.textBoxReceive.Text += $"{content}\n"; });
+            }
         }
     }
 }
