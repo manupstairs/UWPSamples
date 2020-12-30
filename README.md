@@ -1,5 +1,9 @@
 ## 该Repository包含了我博客里，UWP分类中的Sample Project。
 
+* 2020年的UWP（5）——UWP和Desktop Extension的双向交互
+  * https://www.cnblogs.com/manupstairs/p/14178931.html
+  * DataExchangeUWP/TwoWayExchange
+
 * 2020年的UWP（4）——UWP和等待Request的Desktop Extension
   * https://www.cnblogs.com/manupstairs/p/14065673.html
   * DataExchangeUWP/ExitAfterHandleRequest
