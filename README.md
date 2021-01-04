@@ -43,3 +43,7 @@
 * UWP开发入门（20）——键盘弹起时变更界面布局
   * https://www.cnblogs.com/manupstairs/p/5738387.html
   * UpdateLayoutWhenKeyboardPopup
+  
+* UWP开发入门（18）——使用ContentControl减少页面元素数量
+  * https://www.cnblogs.com/manupstairs/p/5672083.html
+  * ContentControlWithTemplateSelector
