@@ -47,3 +47,7 @@
 * UWP开发入门（18）——使用ContentControl减少页面元素数量
   * https://www.cnblogs.com/manupstairs/p/5672083.html
   * ContentControlWithTemplateSelector
+  
+* UWP开发入门（17）——判断设备类型及响应VirtualKey
+  * https://www.cnblogs.com/manupstairs/p/5656845.html
+  * DeviceFamilyAndVirtualKey
