@@ -1,5 +1,9 @@
 ## 该Repository包含了我博客里，UWP分类中的Sample Project。
 
+* 2020年的UWP（5）——UWP和Desktop Extension的双向交互
+  * https://www.cnblogs.com/manupstairs/p/14178931.html
+  * DataExchangeUWP/TwoWayExchange
+
 * 2020年的UWP（4）——UWP和等待Request的Desktop Extension
   * https://www.cnblogs.com/manupstairs/p/14065673.html
   * DataExchangeUWP/ExitAfterHandleRequest
@@ -39,3 +43,11 @@
 * UWP开发入门（20）——键盘弹起时变更界面布局
   * https://www.cnblogs.com/manupstairs/p/5738387.html
   * UpdateLayoutWhenKeyboardPopup
+  
+* UWP开发入门（18）——使用ContentControl减少页面元素数量
+  * https://www.cnblogs.com/manupstairs/p/5672083.html
+  * ContentControlWithTemplateSelector
+  
+* UWP开发入门（17）——判断设备类型及响应VirtualKey
+  * https://www.cnblogs.com/manupstairs/p/5656845.html
+  * DeviceFamilyAndVirtualKey
