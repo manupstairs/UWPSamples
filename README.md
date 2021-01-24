@@ -51,3 +51,7 @@
 * UWP开发入门（17）——判断设备类型及响应VirtualKey
   * https://www.cnblogs.com/manupstairs/p/5656845.html
   * DeviceFamilyAndVirtualKey
+  
+* UWP开发入门（16）——常见的内存泄漏的原因
+  * https://www.cnblogs.com/manupstairs/p/5617940.html
+  * EventMemoryLeak
