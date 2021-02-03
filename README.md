@@ -55,3 +55,19 @@
 * UWP开发入门（16）——常见的内存泄漏的原因
   * https://www.cnblogs.com/manupstairs/p/5617940.html
   * EventMemoryLeak
+ 
+* UWP开发入门（15）——在FlipView中通过手势操作图片
+  * https://www.cnblogs.com/manupstairs/p/5557597.html
+  * PhotosBrowser
+  
+* UWP开发入门（14）—— UserControl中Adaptive UI的小技巧
+  * https://www.cnblogs.com/manupstairs/p/5528739.html
+  * AdaptiveUserControl
+  
+* UWP开发入门（十三）——用Diagnostic Tool检查内存泄漏
+  * https://www.cnblogs.com/manupstairs/p/5493399.html
+  * EventMemoryLeak
+  
+* UWP开发入门（十二）——神器Live Visual Tree
+  * https://www.cnblogs.com/manupstairs/p/5410474.html
+  * LiveVisualTreeTest
