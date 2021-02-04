@@ -55,3 +55,36 @@
 * UWP开发入门（16）——常见的内存泄漏的原因
   * https://www.cnblogs.com/manupstairs/p/5617940.html
   * EventMemoryLeak
+  * CheckMemoryLeak
+ 
+* UWP开发入门（15）——在FlipView中通过手势操作图片
+  * https://www.cnblogs.com/manupstairs/p/5557597.html
+  * PhotosBrowser
+  
+* UWP开发入门（14）—— UserControl中Adaptive UI的小技巧
+  * https://www.cnblogs.com/manupstairs/p/5528739.html
+  * AdaptiveUserControl
+  
+* UWP开发入门（13）——用Diagnostic Tool检查内存泄漏
+  * https://www.cnblogs.com/manupstairs/p/5493399.html
+  * EventMemoryLeak
+  
+* UWP开发入门（12）——神器Live Visual Tree
+  * https://www.cnblogs.com/manupstairs/p/5410474.html
+  * LiveVisualTreeTest
+  
+* UWP开发入门（11）——Attached Property的简单应用
+  * https://www.cnblogs.com/manupstairs/p/5380139.html
+  * RichTextBlockExSample
+  
+* UWP开发入门（10）——通过继承来扩展ListView
+  * https://www.cnblogs.com/manupstairs/p/5321390.html
+  * ListViewExSample
+  
+* UWP开发入门（9）——简单界面的布局技巧及屏幕适应
+  * https://www.cnblogs.com/manupstairs/p/5267418.html
+  * AdaptiveLayout
+  
+* UWP开发入门（8）——聊天窗口和ItemTemplateSelector
+  * https://www.cnblogs.com/manupstairs/p/5240282.html
+  * ChatWindow
