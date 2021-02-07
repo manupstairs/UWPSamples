@@ -10,7 +10,7 @@
   <Identity
     Name="10751.DataExchangeTwoway"
     Publisher="CN=820ED429-02B9-4D37-81BE-278E7FFD95D5"
-    Version="1.0.0.0" />
+    Version="1.0.1.0" />
 
   <Properties>
     <DisplayName>DataExchangeTwoway</DisplayName>
