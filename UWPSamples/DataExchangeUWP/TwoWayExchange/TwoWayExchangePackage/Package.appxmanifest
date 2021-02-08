@@ -8,13 +8,13 @@
   IgnorableNamespaces="uap rescap desktop">
 
   <Identity
-    Name="b557c64e-e9b6-47ad-bee0-42ea5ee2bcff"
-    Publisher="CN=xingz"
-    Version="1.0.0.0" />
+    Name="10751.DataExchangeTwoway"
+    Publisher="CN=820ED429-02B9-4D37-81BE-278E7FFD95D5"
+    Version="1.0.1.0" />
 
   <Properties>
-    <DisplayName>TwoWayExchangePackage</DisplayName>
-    <PublisherDisplayName>xingz</PublisherDisplayName>
+    <DisplayName>DataExchangeTwoway</DisplayName>
+    <PublisherDisplayName>楼上那个蜀黍</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
@@ -32,12 +32,12 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="TwoWayExchangePackage"
+        DisplayName="DataExchangeTwoway"
         Description="TwoWayExchangePackage"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"  Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png"/>
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
