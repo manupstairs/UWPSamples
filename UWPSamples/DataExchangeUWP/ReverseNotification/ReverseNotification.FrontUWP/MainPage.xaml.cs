@@ -48,12 +48,12 @@ namespace ReverseNotification.FrontUWP
             AppServiceHandler.Instance.RequestReceived -= Instance_RequestReceived;
         }
 
-        private void Instance_RequestReceived(object sender, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs e)
+        private async void Instance_RequestReceived(object sender, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs e)
         {
             var message = e.Request.Message;
             if (message.TryGetValue("HotKey", out object keyCode))
             {
-                HotKeyList.Add(keyCode.ToString());
+                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.High, () => { HotKeyList.Add(keyCode.ToString()); });
             }
         }
     }
