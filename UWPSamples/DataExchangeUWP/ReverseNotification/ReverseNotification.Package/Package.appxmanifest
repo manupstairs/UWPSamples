@@ -4,6 +4,7 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   IgnorableNamespaces="uap rescap">
 
   <Identity
@@ -39,6 +40,12 @@
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.appService">
+          <uap:AppService Name="ReverseNotificationAppService" />
+        </uap:Extension>
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="ReverseNotification.Desktop\ReverseNotification.Desktop.exe"/>
+      </Extensions>
     </Application>
   </Applications>
 

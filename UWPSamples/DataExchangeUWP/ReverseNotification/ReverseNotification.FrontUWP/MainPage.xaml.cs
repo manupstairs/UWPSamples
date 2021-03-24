@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,9 +23,39 @@ namespace ReverseNotification.FrontUWP
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ObservableCollection<string> hotKeyList = new ObservableCollection<string>();
+
+        public ObservableCollection<string> HotKeyList
+        {
+            get { return hotKeyList; }
+            set { hotKeyList = value; }
+        }
+
+
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            AppServiceHandler.Instance.RequestReceived += Instance_RequestReceived;
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            AppServiceHandler.Instance.RequestReceived -= Instance_RequestReceived;
+        }
+
+        private void Instance_RequestReceived(object sender, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs e)
+        {
+            var message = e.Request.Message;
+            if (message.TryGetValue("HotKey", out object keyCode))
+            {
+                HotKeyList.Add(keyCode.ToString());
+            }
         }
     }
 }
